@@ -9,9 +9,9 @@ This Project is a beginner friendly project I built using React. Some key Aspect
 
 Deployed live on https://corona-tracker-4448fe.netlify.app. Check out!
 
-![screenshot-covid-tracker](https://user-images.githubusercontent.com/68222437/119886896-284cd900-bf3c-11eb-919c-98009d6341a4.png)
-
 Yooooo! 🚀
+
+![screenshot-covid-tracker](https://user-images.githubusercontent.com/68222437/119886896-284cd900-bf3c-11eb-919c-98009d6341a4.png)
 
 # Getting Started with Create React App
 
