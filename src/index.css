@@ -1,0 +1,29 @@
+* {margin: 0;}
+
+body {
+  font-family: -apple-system, 'Roboto', 'Helvetica Neue', sans-serif;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+body {
+  background: #f5f6fa;
+}
+
+.app__header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  justify-content: space-between;
+}
+
+.app__dropdown {
+
+}
+
+.app__stats {
+  display: flex;
+  justify-content: space-between;
+}
