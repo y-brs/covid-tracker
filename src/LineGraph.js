@@ -1,51 +1,45 @@
 import { useState, useEffect } from "react";
 import { Line } from "react-chartjs-2";
 import numeral from "numeral";
+import dateFormat from "dateformat";
 
 const options = {
-  legend: {
-    display: false,
-  },
-  elements: {
-    point: {
-      radius: 0,
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        display: false,
+      },
+      tooltip: {
+        callbacks: {
+          label: function (tooltipItem, data) {
+            return numeral(tooltipItem.parsed.y).format("+0,0");
+          }
+        }
+      }
     },
-  },
-  maintainAspectRatio: false,
-  tooltips: {
-    mode: "index",
-    intersect: false,
-    callbacks: {
-      label: function (tooltipItem, data) {
-        return numeral(tooltipItem.value).format("+0,0");
+    interaction: {
+      intersect: false,
+      mode: 'nearest',
+    },
+    elements: {
+      point: {
+        radius: 0,
       },
     },
-  },
-  scales: {
-    xAxes: [
-      {
-        type: "time",
-        time: {
-          format: "MM/DD/YY",
-          tooltipFormat: "ll",
-        },
-      },
-    ],
-    yAxes: [
-      {
-        gridLines: {
+    scales: {
+      y: {
+        grid: {
           display: false,
         },
         ticks: {
-          // Include a dollar sign in the ticks
           callback: function (value, index, values) {
             return numeral(value).format("0a");
-          },
-        },
-      },
-    ],
-  },
-};
+          }
+        }
+      }
+    }
+  };
 
 const buildChartData = (data, casesType) => {
   let chartData = [];
@@ -54,7 +48,7 @@ const buildChartData = (data, casesType) => {
   for (let date in data.cases) {
     if (lastDataPoint) {
       let newDataPoint = {
-        x: date,
+        x: dateFormat(date, "d mmm"),
         y: data[casesType][date] - lastDataPoint,
       };
 
@@ -90,13 +84,12 @@ function LineGraph({ casesType, ...props }) {
       {data?.length > 0 && (
         <Line
           data={{
-            datasets: [
-              {
-                backgroundColor: "rgba(204, 16, 52, 0.5)",
+            datasets: [{
+                fill: true,
+                backgroundColor: "rgba(204, 16, 52, .5)",
                 borderColor: "#CC1034",
-                data: data,
-              },
-            ],
+                data: data
+              }]
           }}
           options={options}
         />
