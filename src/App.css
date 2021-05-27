@@ -27,6 +27,7 @@ body {
 }
 
 .app__right {
+  width: 350px;
   display: flex;
   flex-direction: column;
 }
@@ -49,5 +50,8 @@ body {
 @media (max-width: 990px) {
   .app {
     flex-direction: column;
+  }
+  .app__right {
+    width: auto;
   }
 }
