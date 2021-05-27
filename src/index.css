@@ -1,54 +1,13 @@
-* {margin: 0;}
-
 body {
-  font-family: 'Roboto', 'Helvetica Neue', sans-serif;
-  background: #f5f6fa;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.app {
-  display: flex;
-  justify-content: space-evenly;
-  padding: 20px;
-}
-
-.app__header {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-  justify-content: space-between;
-}
-
-.app__stats {
-  display: flex;
-  justify-content: space-between;
-}
-
-.app__left {
-  flex: 0.9;
-}
-
-.app__right {
-  display: flex;
-  flex-direction: column;
-}
-
-.app__graphTitle {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.app__right .MuiCardContent-root {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-
-.app__graph {
-  flex-grow: 1;
-}
-
-@media (max-width: 990px) {
-  .app {
-    flex-direction: column;
-  }
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
