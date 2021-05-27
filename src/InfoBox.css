@@ -42,3 +42,13 @@
   font-size: 0.8rem !important;
   margin-top: 15px !important;
 }
+
+@media (max-width: 480px) {
+  .infoBox__cases {
+    font-size: 1rem;
+  }
+
+  .MuiTypography-body1 {
+    font-size: 0.9rem !important;
+  }
+}
