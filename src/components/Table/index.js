@@ -1,5 +1,5 @@
-import "./Table.css";
 import numeral from "numeral";
+import "./index.css";
 
 function Table({ countries }) {
   return (

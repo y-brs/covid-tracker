@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
-import "./App.css";
 import { MenuItem, FormControl, Select, CardContent, Card } from "@material-ui/core";
-import InfoBox from "./InfoBox";
-import Map from "./Map";
-import Table from "./Table";
-import { sortData, prettyPrintStat } from "./util";
-import LineGraph from "./LineGraph";
+import InfoBox from "./components/InfoBox";
+import Map from "./components/Map";
+import Table from "./components/Table";
+import { sortData, prettyPrintStat } from "./components/Utils";
+import LineGraph from "./components/LineGraph";
+import "./index.css";
 import "leaflet/dist/leaflet.css";
-import "./InfoBox.css";
 
 function App() {
   const [countries, setCountries] = useState([]);
@@ -21,7 +20,7 @@ function App() {
   const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
-    fetch("https://disease.sh/v3/covid-19/all")
+    fetch("https://disease.sh/v3/covid-19/all", {mode: "cors"})
     .then(response => response.json())
     .then(data => {
       setCountryInfo(data);
@@ -30,7 +29,7 @@ function App() {
 
   useEffect(() => {
     const getCountriesData = async () => {
-      await fetch("https://disease.sh/v3/covid-19/countries")
+      await fetch("https://disease.sh/v3/covid-19/countries", {mode: "cors"})
         .then((response) => response.json())
         .then((data) => {
           const countries = data.map((country) => ({
@@ -58,7 +57,7 @@ function App() {
         ? "https://disease.sh/v3/covid-19/all"
         : `https://disease.sh/v3/covid-19/countries/${countryCode}`;
 
-    await fetch(url)
+    await fetch(url, {mode: "cors"})
     .then((response) => response.json())
     .then((data) => {
       setCountry(countryCode);
