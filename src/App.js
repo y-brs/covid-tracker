@@ -20,7 +20,7 @@ function App() {
   const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
-    fetch("https://disease.sh/v3/covid-19/all", {mode: "cors"})
+    fetch("/v3/covid-19/all", {mode: "cors"})
     .then(response => response.json())
     .then(data => {
       setCountryInfo(data);
@@ -29,7 +29,7 @@ function App() {
 
   useEffect(() => {
     const getCountriesData = async () => {
-      await fetch("https://disease.sh/v3/covid-19/countries", {mode: "cors"})
+      await fetch("/v3/covid-19/countries", {mode: "cors"})
         .then((response) => response.json())
         .then((data) => {
           const countries = data.map((country) => ({
@@ -54,8 +54,8 @@ function App() {
 
     const url =
       countryCode === "worldwide"
-        ? "https://disease.sh/v3/covid-19/all"
-        : `https://disease.sh/v3/covid-19/countries/${countryCode}`;
+        ? "/v3/covid-19/all"
+        : `/v3/covid-19/countries/${countryCode}`;
 
     await fetch(url, {mode: "cors"})
     .then((response) => response.json())
