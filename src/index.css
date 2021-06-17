@@ -1,13 +1,15 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap&subset=cyrillic');
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap&subset=cyrillic");
 
 * {margin: 0;}
 
 body {
-  font-family: 'Open Sans', Roboto, 'Helvetica Neue', -apple-system, sans-serif;
+  font-family: "Open Sans", Roboto, "Helvetica Neue", -apple-system, sans-serif;
   background: #f5f6fa;
 }
 
 .app {
+  max-width: 1800px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-evenly;
   padding: 20px;
