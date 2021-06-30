@@ -3,6 +3,7 @@
 .infoBox {
   flex: 1;
   cursor: pointer;
+  border-top: 10px solid white;
 }
 
 .infoBox:not(:last-child) {
@@ -17,10 +18,10 @@
 }
 
 .infoBox--selected {
-  border-top: 10px solid greenyellow;
+  border-color: greenyellow;
 }
 
-.infoBox--red {
+.infoBox--selected.infoBox--red {
   border-color: red;
 }
 
@@ -28,7 +29,7 @@
   color: lightgreen;
 }
 
-.infoBox--grey {
+.infoBox--selected.infoBox--grey {
   border-color: grey;
 }
 

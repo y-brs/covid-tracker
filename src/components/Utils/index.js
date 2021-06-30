@@ -1,19 +1,22 @@
 import numeral from "numeral";
 import { Circle, Popup } from "react-leaflet";
 
-const casesTypeColors = {
+export const casesTypeColors = {
   cases: {
     hex: "#CC1034",
+    bgFill: "rgba(204, 16, 52, .5)",
     mulitiplier: 800,
   },
 
   recovered: {
     hex: "#7DD71D",
+    bgFill: "rgba(125, 215, 29, .5)",
     mulitiplier: 1200,
   },
 
   deaths: {
     hex: "#C0C0C0",
+    bgFill: "rgba(192, 192, 192, .5)",
     mulitiplier: 2000,
   },
 };
