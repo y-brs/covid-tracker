@@ -11,6 +11,7 @@ import "leaflet/dist/leaflet.css";
 function App() {
   const [countries, setCountries] = useState([]);
   const [country, setCountry] = useState("worldwide");
+  const [countryName, setCountryName] = useState("Worldwide");
   const [countryInfo, setCountryInfo] = useState({});
   const [tableData, setTableData] = useState([]);
   const [mapCenter, setMapCenter] = useState([51.1657, 10.4515]);
@@ -61,6 +62,7 @@ function App() {
     .then((response) => response.json())
     .then((data) => {
       setCountry(countryCode);
+      setCountryName(data.country);
       setCountryInfo(data);
       setLoading(false);
 
@@ -133,11 +135,15 @@ function App() {
 
       <Card className="app__right">
         <CardContent>
-          <h3>Live cases by Country</h3>
+          <h3>Live cases by country</h3>
           <Table countries={tableData} />
 
-          <h3 className="app__graphTitle">WorldWide new {casesType}</h3>
-          <LineGraph className="app__graph" casesType={casesType} />
+          <h3 className="app__graphTitle">{countryName ? `${countryName}` : "Worldwide"} new {casesType}</h3>
+          <LineGraph
+            className="app__graph"
+            casesType={casesType}
+            countryCode={country}
+          />
         </CardContent>
       </Card>
     </div>
